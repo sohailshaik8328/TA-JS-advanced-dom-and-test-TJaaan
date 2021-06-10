@@ -1,25 +1,37 @@
-let root = document.querySelector('.root');
+let root = document.querySelector("ul");
 
-function handleScroll() {
-    quotes.forEach((elm) => {
-        let div = document.createElement("div");
+let max = 6;
+let index = 0;
 
-        let h2 = document.createElement('h2');
-        h2.innerText = elm.quoteText;
+function addQuotes() {
+    for(let i = 0 ; i < max ; i++) {
+        let li = document.createElement('li');
+        let blockquote = document.createElement('blockquote');
+        blockquote.innerText = quotes[index].quoteText;
 
-        let  p = document.createElement('p');
-        p.innerText = elm.quoteAuthor;
+        let cite = document.createElement('cite');
+        cite.innerText = quotes[index].quoteAuthor;
 
-        div.append(h2, p);
-        root.append(div);
-        
-    })
+        li.append(blockquote, cite);
+        root.append(li);
+        index++;
+    }
 }
 
+addQuotes();
 
-window.onload = function() {
-    alert(`Page is Loaded`)
-}
+document.addEventListener('scroll', () => {
+    let scrollTop = document.documentElement.scrollTop;
+    let scrollHeight = document.documentElement.scrollHeight;
+    let clientHeight = document.documentElement.clientHeight;
+
+    if(scrollTop + clientHeight >= scrollHeight && index < quotes.length) {
+        addQuotes();
+    }
+});
 
 
-window.addEventListener("scroll", handleScroll)
+window.addEventListener("DOMContentLoaded", () => {
+    alert(`Page Loaded with ${quotes.length}`);
+    addQuotes();
+})
