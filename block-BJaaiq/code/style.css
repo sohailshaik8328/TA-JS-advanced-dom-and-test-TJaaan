@@ -46,3 +46,14 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+/* Custom styles */
+blockquote {
+    font-size: 5rem;
+}
+cite {
+    font-size: 3rem;
+}
+li {
+    margin: 3rem;
+    line-height: 1.5;
+}
