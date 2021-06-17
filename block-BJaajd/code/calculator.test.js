@@ -23,3 +23,4 @@ test("1 ** 2 = 2", () => {
 test("2 = true", () => {
     expect(factorial(2)).toBe(true);
 })
+
