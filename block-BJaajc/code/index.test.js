@@ -14,4 +14,8 @@ test("getCircumference radius is 20 ", () => {
 
 test("getArea radius is 30 ", () => {
     expect(getArea(30)).toBe(`The area is ${60} NN.`);
+
 });
+
+
+

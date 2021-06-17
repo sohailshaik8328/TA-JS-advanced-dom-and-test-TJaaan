@@ -14,6 +14,8 @@ function isPalindrome(value) {
     }
 }
 
+
+
 function getCircumference(radius) {
     return `The circumference is ${radius ** 2} NN.`;
 }
@@ -29,3 +31,6 @@ module.exports = {
     getCircumference,
     getArea,
 }
+
+
+
